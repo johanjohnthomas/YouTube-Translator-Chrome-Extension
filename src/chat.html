@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoutubeTranslator</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="chat.html" class="navigation active">Chat</a>
+        <a href="index.html" class="navigation">Viewer</a>
+        <a href="contribute.html" class="navigation">Content-Creator</a>
+    </nav>
+
+    <div id="chat-container">
+        <div id="message-container">
+        </div>
+    
+        <form id="message-form">
+            <input type="text" id="message-input" placeholder="Type your message">
+            <button type="submit">Send</button>
+        </form>
+</div>
+
+    <script type="module" src="../scripts/getGitSummary.js"></script>
+    <script type="module" src="../scripts/chat.js"></script>
+</body>
+</html>

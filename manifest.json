@@ -1,0 +1,19 @@
+{
+    "name": "YouTube-Translator",
+    "version": "1.0.0",
+    "description": "Automatically translates a YouTube page.",
+    "manifest_version": 3,
+    "author": "",
+    "action":{
+        "default_popup": "src/chat.html",
+        "default_title": "YouTube-Translator"
+    },
+    "permissions": [
+        "tabs"
+    ],
+    "icons": {
+        "128": "128-white-circle.png"
+        
+      }
+      
+}
