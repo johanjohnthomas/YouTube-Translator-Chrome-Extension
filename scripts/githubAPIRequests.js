@@ -1,14 +1,27 @@
-/** Function will send an API request to GitHub and expect all the files from a repository
-*/
-export async function getGitReadme(url) {
-   let readme;
+/** Function will send an API request to API and expect the transcript
+ */
+export async function getTranscript(videoUrl, apiUrl) {
+  const requestOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      video_url: videoUrl,
+    }),
+  };
 
-   try {
-       readme = await fetch(url);
-   } catch (error) {
-       readme = "Sorry, cannot connect to GitHub";
-       console.error(error);
-   }
+  try {
+    const response = await fetch(apiUrl, requestOptions);
 
-   return readme.text();
+    if (!response.ok) {
+      throw new Error("Error fetching transcript");
+    }
+
+    const data = await response.json();
+    return data.transcript;
+  } catch (error) {
+    console.error(error);
+    return "Sorry, cannot connect to the server";
+  }
 }
