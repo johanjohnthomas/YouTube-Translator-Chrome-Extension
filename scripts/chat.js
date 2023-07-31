@@ -40,7 +40,7 @@ function createMessageBubble(message, sender) {
 }
 
 let messageResponse;
-console.log(urlSplit[2]);
+
 if (urlSplit[2] == "www.youtube.com") {
   let videoID = urlSplit[3];
   messageResponse =
@@ -68,7 +68,7 @@ messageForm.addEventListener("submit", function (event) {
 
 async function QnA(message) {
   let final;
-  let input = await getTranscript(getCurrentURL(), URL);
+  let input = await getTranscript( await getCurrentURL(), URL);
   input = input.replace(/:\w+:/g, "");
   let source = input.replace(/[^a-zA-Z0-9'.\n]/g, " ");
 

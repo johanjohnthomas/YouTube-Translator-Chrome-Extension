@@ -1,22 +1,18 @@
 import { getCurrentURL } from './getCurrentURL.js';
-import { getGitReadme } from './githubAPIRequests.js';
+import { getTranscript } from './githubAPIRequests.js';
 import { apiKey } from './apiKey.js';
 
 let currentUrlString = await getCurrentURL();
 let urlSplit = currentUrlString.split("/");
 
+
+const URL = `http://127.0.0.1:5000/transcript_text`;
 let summary = ""
-
-let owner = urlSplit[3];
-let repoName = urlSplit[4];
-
-const URL = `https://raw.githubusercontent.com/${owner}/${repoName}`;
-const READMEURL = URL + '/main/README.md'
 
 async function summarize() {
     let final;
 
-    let input = await getGitReadme(READMEURL);
+    let input = await getTranscript(await getCurrentURL(),URL);
     input = input.replace(/:\w+:/g, '');
     let source = input.replace(/[^a-zA-Z0-9'.\n]/g," ")
 	
@@ -42,18 +38,18 @@ async function summarize() {
 }
 
 function main() {
-	if (urlSplit[2] == "github.com") {
+	if (urlSplit[2] == "www.youtube.com") {
 		try {
 			summary = summarize();
 		} catch (error) {
 			console.error(error);
-			summary = "Sorry, but this isn't a valid GitHub repository.";
+			summary = "Sorry, but this isn't a valid YouTube Video.";
 		}
 	} else {
-		summary = "Sorry, but this isn't a valid GitHub repository.";
+		summary = "Sorry, but this isn't a valid YouTube Video.";
 	}
 	
 	return summary;
 }
 
-document.getElementById("summary-container").innerHTML = await main();
+document.getElementById("summary-container").innerHTML = main();

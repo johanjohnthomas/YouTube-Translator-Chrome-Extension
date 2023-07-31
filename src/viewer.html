@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoutubeTranslator</title> 
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav>
+        <a href="chat.html" class="navigation">Chat</a>
+        <a href="viewer.html" class="navigation active">Video Translate</a>
+        
+    </nav>
+
+    <div id="summary-container">
+        <!-- Element for YouTube Video Title -->
+        <h1 id="videoTitle">YouTube Video found!</h1>
+
+        <!-- Element for YouTube Video Description -->
+        <p id="videoDescription">VoiceOver can be generated!</p>
+
+        <!-- Dropdown menu for language selection -->
+        <label for="languageSelect">Select Language:</label>
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="de">German</option>
+            <option value="pl">Polish</option>
+            <option value="es">Spanish</option>
+            <option value="it">Italian</option>
+            <option value="fr">French</option>
+            <option value="pt">Portuguese</option>
+            <option value="hi">Hindi</option>
+        </select>
+
+        <!-- Checkbox for Cloning Voice -->
+        <label for="cloneVoice">Clone Voice (Only if you have rights to the voice):</label>
+        <input type="checkbox" id="cloneVoice" name="cloneVoice">
+
+        <!-- Button to Generate Voice Over -->
+        <button id="generateVoiceOver">Generate Voice Over</button>
+        <br>
+    </div>
+
+    <!-- Add your JavaScript code to interact with these elements -->
+    <script type="module" src="../scripts/popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your meta tags and other head content as needed -->
+    <title>YouTube Translator - Result</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap");
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        #video-container {
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #translatedVideo {
+            width: 100%;
+        }
+
+        #writing-div {
+            text-align: center;
+            margin: 20px;
+        }
+
+        #loading-text {
+            font-size: 24px;
+            color: #333;
+            font-family: "Poppins", sans-serif;
+        }
+
+        #download-button {
+            display: inline-block;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        
+        #added-div {
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <video id="translatedVideo" controls autoplay>
+            <!-- The video source will be dynamically set in the JavaScript -->
+        </video>
+    </div>
+    <div id="writing-div">
+        <p id="loading-text">Please wait, the video is loading</p>
+       
+        
+    </div>
+    <div id="added-div">
+        <a id="download-button" href="" download disabled>Download Video</a>
+       
+        
+    </div>
+    
+
+    <script src="../scripts/result.js"></script>
+</body>
+</html>
