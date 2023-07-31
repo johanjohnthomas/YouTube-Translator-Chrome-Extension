@@ -1,12 +1,12 @@
 {
-    "name": "YouTube-Translator",
+    "name": "YouTranslate",
     "version": "1.0.0",
     "description": "Automatically translates a YouTube page.",
     "manifest_version": 3,
     "author": "",
     "action":{
         "default_popup": "src/chat.html",
-        "default_title": "YouTube-Translator"
+        "default_title": "YouTranslate"
     },
     "content_scripts": [
         {
